@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
             $table->boolean('visible');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')
-                  ->references('id');
+                  ->references('id')
                   ->on('categories')
                   ->onDelete('cascade');
             $table->timestamps();
