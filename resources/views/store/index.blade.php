@@ -1,21 +1,28 @@
 @extends('store.template')
 @section('content')
-
-<div class="products">
-    <!--    <h1>Listado de Productos</h1>-->
-    @foreach($products as $product)
-    <div class="product white-panel">
-        <h3>{{ $product->name }}</h3>
-        <img src="{{$product->image }}" width='200'>
-        <div class="product-info panel">
-            <p>{{ $product->extract }}</p>
-            <p>Precio: ${{ number_format($product->price,2) }}</p>
-            <p>
-                <a href="#">Agregar</a>
-                <a href="{{ route('product-detail', $product->slug) }}">Ver mas</a>
-            </p>
+<div class="container text-center">
+    <div id="products">
+        <!--    <h1>Listado de Productos</h1>-->
+        @foreach($products as $product)
+        <div class="product white-panel">
+            <h3>{{ $product->name }}</h3><hr>
+            <img src="{{$product->image }}" width='200'>
+            <div class="product-info panel">
+                <p>{{ $product->extract }}</p>
+                <h3>Precio: ${{ number_format($product->price,2) }}</h3>
+                <p>
+                    <a class="btn btn-warning" href="#">
+                        <i class="fa fa-cart-plus"></i>
+                         Agregar
+                    </a>
+                    <a class="btn btn-primary" href="{{ route('product-detail', $product->slug) }}">
+                        <i class="fa fa fa-eye"></i>
+                        Ver mas
+                    </a>
+                </p>
+            </div>
         </div>
+        @endforeach
     </div>
-    @endforeach
 </div>
 @stop
