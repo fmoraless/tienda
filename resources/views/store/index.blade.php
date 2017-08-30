@@ -4,10 +4,10 @@
 <div class="products">
     <!--    <h1>Listado de Productos</h1>-->
     @foreach($products as $product)
-    <div class="product">
+    <div class="product white-panel">
         <h3>{{ $product->name }}</h3>
         <img src="{{$product->image }}" width='200'>
-        <div class="product-info">
+        <div class="product-info panel">
             <p>{{ $product->extract }}</p>
             <p>Precio: ${{ number_format($product->price,2) }}</p>
             <p>
