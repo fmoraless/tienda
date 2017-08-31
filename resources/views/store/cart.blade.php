@@ -7,6 +7,13 @@
 
     <div class="table-cart">
         @if(count($cart))
+        <p>
+            <a href="{{ route('cart-trash') }}" class="btn btn-danger">
+                <i class="fa fa-trash"></i>
+                Vaciar cotización
+            </a>
+        </p>
+        
         <div class="table-responsive">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
