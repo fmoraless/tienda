@@ -38,7 +38,7 @@
                                 min="1"
                                 max="100"
                                 value="{{ $item->quantity }}"
-                                id="product_{{ $item->id }}}"
+                                id="product_{{ $item->id }}"
                             >
                             <a 
                                 href="#"
@@ -58,7 +58,12 @@
                     </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table><hr>
+            <h3>
+                <span class="label label-success">
+                    Total: ${{ number_format($total,2)}}
+                </span>
+            </h3>
         </div>
         @else
         <h3><span class="label label-warning">No hay productos en la cotización</span></h3>
