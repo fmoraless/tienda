@@ -32,7 +32,23 @@
                         <td><img src="{{ $item->image }}"></td>
                         <td>{{ $item->name }}</td>
                         <td>${{ number_format($item->price,2) }}</td>
-                        <td>{{ $item->quantity }}</td>
+                        <td>
+                            <input
+                                type="number"
+                                min="1"
+                                max="100"
+                                value="{{ $item->quantity }}"
+                                id="product_{{ $item->id }}}"
+                            >
+                            <a 
+                                href="#"
+                                class="btn btn-warning btn-update-item"
+                                data-href="{{ route('cart-update', $item->slug) }}"
+                                data-id ="{{ $item->id }}"
+                            >
+                                <i class="fa fa-refresh"></i>       
+                            </a>
+                         </td>
                         <td>${{ number_format($item->price * $item->quantity,2) }}</td>
                         <td>
                             <a href="{{ route('cart-delete', $item->slug) }}" class="btn btn-danger">
@@ -47,6 +63,15 @@
         @else
         <h3><span class="label label-warning">No hay productos en la cotización</span></h3>
         @endif
+        <hr>
+        <p>
+            <a href="{{ route('home') }}" class="btn btn-primary">
+                <i class="fa fa-chevron-circle-left"></i>Añadir más
+            </a>
+            <a href="{{ route('home') }}" class="btn btn-primary">
+                Continuar<i class="fa fa-chevron-circle-right"></i>
+            </a>
+        </p>
     </div>
 </div>
 @stop

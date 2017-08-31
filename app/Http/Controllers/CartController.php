@@ -37,6 +37,17 @@ class CartController extends Controller {
 
         return redirect()->route('cart-show');
     }
+    
+    // Update Item
+    public function update(Product $product, $quantity)
+    {
+        $cart = \Session::get('cart');
+        $cart[$product->slug]->quantity = $quantity;
+        \Session::put('cart', $cart);
+        
+        return redirect()->route('cart-show');
+    }
+    
 
     // Trash Cart
     public function trash()
