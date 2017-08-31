@@ -1,8 +1,17 @@
 body{
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Nav ------------------*/
+.main-title{
     
 }
 
-/* Footer ------------------*/
+h1,h2,h3,h4{
+    font-family: 'Quicksand', sans-serif;
+}
+
+
 
 
 
@@ -67,4 +76,15 @@ transition: all 0.3s ease-in-out;
     background: #fff;
     border-radius: 1em;
     padding: 1em;
+}
+
+/* Carrito --------------*/
+.table-cart{
+    background: #fff;
+    border-radius: 1em;
+    margin-bottom: 30px;
+    padding: 1em;
+}
+.table-cart img{
+    width: 50px;
 }

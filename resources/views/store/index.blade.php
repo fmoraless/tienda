@@ -11,7 +11,7 @@
                 <p>{{ $product->extract }}</p>
                 <h3>Precio: ${{ number_format($product->price,2) }}</h3>
                 <p>
-                    <a class="btn btn-warning" href="#">
+                    <a class="btn btn-warning" href="{{ route('cart-add', $product->slug) }}">
                         <i class="fa fa-cart-plus"></i>
                          Agregar
                     </a>

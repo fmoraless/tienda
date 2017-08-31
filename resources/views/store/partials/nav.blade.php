@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Cotizacion App</a>
+      <a class="navbar-brand" href="{{ route('home') }}">Cotizacion App</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -29,7 +29,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><i class="fa fa-shopping-cart"></i> Cotización</a></li>
+          <li><a href="{{ route('cart-show') }}"><i class="fa fa-shopping-cart"></i> Cotización</a></li>
           <li><a href="#"><i class="fa fa-user"></i> Iniciar Sesión</a></li>
       </ul>
     </div>
