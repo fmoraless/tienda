@@ -6,6 +6,7 @@
     </div>
 
     <div class="table-cart">
+        @if(count($cart))
         <div class="table-responsive">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
@@ -27,7 +28,7 @@
                         <td>{{ $item->quantity }}</td>
                         <td>${{ number_format($item->price * $item->quantity,2) }}</td>
                         <td>
-                            <a href="#" class="btn btn-danger">
+                            <a href="{{ route('cart-delete', $item->slug) }}" class="btn btn-danger">
                                 <i class="fa fa-remove"></i>
                             </a>
                         </td>
@@ -36,6 +37,9 @@
                 </tbody>
             </table>
         </div>
+        @else
+        <h3><span class="label label-warning">No hay productos en la cotización</span></h3>
+        @endif
     </div>
 </div>
 @stop
