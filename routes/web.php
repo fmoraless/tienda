@@ -54,6 +54,17 @@ Route::get('cart/update/{product}/{quantity?}', [
     'uses' => 'CartController@update'
 ]);
 
+
+// Authentication routes....
 Auth::routes();
+
+Route::get('auth/login', [
+    'as' => 'login-get',
+    'uses' => 'Auth\LoginController@getLogin'
+]);
+Route::post('auth/login', [
+    'as' => 'login-post',
+    'uses' => 'Auth\LoginController@postLogin'
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
